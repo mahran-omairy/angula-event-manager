@@ -1,0 +1,15 @@
+<div class="main-container">
+  <h1 class="page-title">{{ title }}</h1>
+  <mat-card>
+    <mat-grid-list cols="3" rowHeight="4em">
+      <mat-grid-tile class="event-title"><strong>Title</strong></mat-grid-tile>
+      <mat-grid-tile><strong>Date</strong></mat-grid-tile>
+      <mat-grid-tile><strong>Actions</strong></mat-grid-tile>
+    </mat-grid-list>
+    <app-event *ngFor="let event of events" [event]="event"> </app-event>
+  </mat-card>
+</div>
+
+<button routerLink="/add" routerLinkActive="router-link-active"  mat-fab color="warn" class="new-event">
+  <mat-icon>add</mat-icon>
+</button>

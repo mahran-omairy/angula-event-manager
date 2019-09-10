@@ -1,0 +1,78 @@
+<div class="main-container">
+  <h1 class="page-title">Edit</h1>
+  <mat-card>
+    <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            placeholder="Enter event title"
+            [formControl]="title"
+            required
+          />
+          <mat-error *ngIf="title.invalid">{{
+            getTitleErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="3">
+        <mat-form-field class="full-width">
+          <textarea
+            matInput
+            placeholder="Enter event description"
+            [formControl]="description"
+            rows="13"
+            required
+          ></textarea>
+          <mat-error *ngIf="description.invalid">{{
+            getDescErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            [min]="minDate"
+            [matDatepicker]="picker"
+            [formControl]="date"
+            placeholder="Choose event date"
+            required
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="date.invalid">{{
+            getDateErrorMessage()
+          }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="full-width">
+          <input
+            matInput
+            type="color"
+            [(ngModel)]="color"
+            placeholder="Choose event color"
+            required
+          />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile>
+        <small class="form-note full-width">All fields are required</small>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="btn-row full-width">
+          <button mat-raised-button routerLink="/">Cancel</button>
+          <button mat-raised-button color="primary" [disabled]="!isValidForm()">
+            Save
+          </button>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</div>

@@ -1,0 +1,17 @@
+.btn-row{
+
+  text-align: right;
+  button + button{
+    margin-left: 15px;
+  }
+}
+
+.form-note{
+  display: block;
+
+  text-align: left;
+}
+.full-width{
+  width: 100%;
+  padding: 0px 10px;
+}
