@@ -23,21 +23,21 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.activedRoute.params.subscribe((params) => {
-      console.log(params.id)
-    })
+      console.log(params.id);
+    });
   }
-  getTitleErrorMessage() {
+  getTitleErrorMessage(): string {
     return this.title.hasError('required') ? 'You must enter a value' : '';
   }
-  getDateErrorMessage() {
+  getDateErrorMessage(): string {
     return this.date.hasError('required') ? 'You must enter a value' : '';
   }
-  getDescErrorMessage() {
+  getDescErrorMessage(): string {
     return this.description.hasError('required')
       ? 'You must enter a value'
       : '';
   }
-  isValidForm() {
+  isValidForm(): boolean {
     return !(
       this.title.hasError('required') ||
       this.date.hasError('required') ||

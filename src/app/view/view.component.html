@@ -1,1 +1,12 @@
-<p>view works!</p>
+<h1 mat-dialog-title [style.color]="event.color">
+  <strong>{{ event.title }}</strong>
+  <button mat-icon-button class="close" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
+</h1>
+<div mat-dialog-content>
+  <p>
+    <strong>{{ event.date | date: "mediumDate" }}</strong>
+  </p>
+  <p>{{ event.description }}</p>
+</div>

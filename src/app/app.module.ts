@@ -7,9 +7,10 @@ import { ListingComponent } from './listing/listing.component';
 import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
 import { EventComponent } from './event/event.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
-import {MatNativeDateModule} from '@angular/material/core';
+
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     ListingComponent,
     EditComponent,
     ViewComponent,
-    EventComponent
+    EventComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +29,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    MatNativeDateModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ViewComponent, ConfirmComponent]
 })
 export class AppModule { }

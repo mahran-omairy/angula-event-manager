@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListingComponent } from './listing/listing.component';
 import { EditComponent } from './edit/edit.component';
 
-const routes: Routes  =[
+const routes: Routes = [
   {
     path: '',
     component: ListingComponent
@@ -19,10 +19,10 @@ const routes: Routes  =[
   {
     path: '**',
     redirectTo: '/'
-  },
-]
+  }
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

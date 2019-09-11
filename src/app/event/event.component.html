@@ -3,13 +3,13 @@
   <mat-grid-tile class="event-title"><mat-icon [style.color]=event.color class="event-icon">event</mat-icon> {{ event.title }}</mat-grid-tile>
   <mat-grid-tile>{{ event.date | date: "mediumDate" }}</mat-grid-tile>
   <mat-grid-tile>
-    <button mat-icon-button matTooltip="View event">
+    <button mat-icon-button matTooltip="View event" (click)="openEvent()">
       <mat-icon>visibility</mat-icon>
     </button>
     <button [routerLink]="'/edit/'+event.id" mat-icon-button color="primary" matTooltip="Edit event">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-icon-button color="warn" matTooltip="Delete event">
+    <button mat-icon-button color="warn" (click)="openConfirm()" matTooltip="Delete event">
       <mat-icon>delete</mat-icon>
     </button>
   </mat-grid-tile>

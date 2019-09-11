@@ -8,9 +8,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
+    MatDialogModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
@@ -22,6 +26,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatTooltipModule
   ],
   exports: [
+    MatDialogModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,

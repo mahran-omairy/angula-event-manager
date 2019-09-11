@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Event } from '../event.interface';
+import { EventComponent } from '../event/event.component';
 
 @Component({
   selector: 'app-view',
@@ -6,10 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(
+    public dialogRef: MatDialogRef<EventComponent>,
+    @Inject(MAT_DIALOG_DATA) public event: Event
+  ) {}
+  ngOnInit() {}
 }
