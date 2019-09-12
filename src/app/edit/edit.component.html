@@ -11,7 +11,7 @@
             required
           />
           <mat-error *ngIf="title.invalid">{{
-            getTitleErrorMessage()
+            getErrorMessage(title)
           }}</mat-error>
         </mat-form-field>
       </mat-grid-tile>
@@ -25,7 +25,7 @@
             required
           ></textarea>
           <mat-error *ngIf="description.invalid">{{
-            getDescErrorMessage()
+            getErrorMessage(description)
           }}</mat-error>
         </mat-form-field>
       </mat-grid-tile>
@@ -45,7 +45,7 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngIf="date.invalid">{{
-            getDateErrorMessage()
+            getErrorMessage(date)
           }}</mat-error>
         </mat-form-field>
       </mat-grid-tile>
@@ -54,10 +54,13 @@
           <input
             matInput
             type="color"
-            [(ngModel)]="color"
+            [formControl]="color"
             placeholder="Choose event color"
             required
           />
+          <mat-error *ngIf="color.invalid">{{
+            getErrorMessage(color)
+          }}</mat-error>
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
@@ -67,8 +70,8 @@
       </mat-grid-tile>
       <mat-grid-tile>
         <div class="btn-row full-width">
-          <button mat-raised-button routerLink="/">Cancel</button>
-          <button mat-raised-button color="primary" [disabled]="!isValidForm()">
+          <button mat-raised-button routerLink="/">Close</button>
+          <button mat-raised-button color="primary" (click)="storeEvent()" [disabled]="!isValidForm()">
             Save
           </button>
         </div>

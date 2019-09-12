@@ -8,10 +8,7 @@ import { EventComponent } from '../event/event.component';
   styleUrls: ['./confirm.component.scss']
 })
 export class ConfirmComponent implements OnInit {
+  constructor(public dialogRef: MatDialogRef<EventComponent>) {}
 
-  constructor( public dialogRef: MatDialogRef<EventComponent>) { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
